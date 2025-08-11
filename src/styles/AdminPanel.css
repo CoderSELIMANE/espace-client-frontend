@@ -1,0 +1,662 @@
+/* ===== ADMIN PANEL DESIGN UNIQUE ===== */
+
+/* Variables CSS personnalisées */
+:root {
+  --admin-primary: #1a1d29;
+  --admin-secondary: #2d3748;
+  --admin-accent: #e53e3e;
+  --admin-success: #38a169;
+  --admin-warning: #d69e2e;
+  --admin-info: #3182ce;
+  --admin-light: #f7fafc;
+  --admin-dark: #1a202c;
+  --admin-gradient: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  --admin-gradient-modern: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  --admin-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  --admin-shadow-hover: 0 25px 50px rgba(0,0,0,0.15);
+  --admin-border-radius: 20px;
+  --admin-card-radius: 28px;
+  --admin-button-radius: 18px;
+  --admin-small-radius: 12px;
+  --admin-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Container principal */
+.admin-container {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+}
+
+.admin-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(39, 174, 96, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(46, 204, 113, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.admin-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Navigation personnalisée */
+.admin-navbar {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: none;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-navbar .navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.admin-navbar .btn {
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.admin-navbar .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  border-color: white;
+}
+
+/* Cards personnalisées */
+.admin-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: var(--admin-border-radius);
+  box-shadow: var(--admin-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  transition: var(--admin-transition);
+}
+
+.admin-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--admin-shadow-hover);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.admin-card-header {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  color: var(--admin-dark);
+  border: none;
+  padding: 1.5rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-card-body {
+  padding: 2rem;
+}
+
+/* En-tête moderne */
+.admin-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: var(--admin-border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(39, 174, 96, 0.2);
+  box-shadow: var(--admin-shadow);
+}
+
+.admin-title {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-subtitle {
+  color: #6c757d;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Table personnalisée */
+.admin-table {
+  border-radius: var(--admin-border-radius);
+  overflow: hidden;
+  box-shadow: var(--admin-shadow);
+  background: white;
+}
+
+.admin-table thead {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  color: white;
+}
+
+.admin-table thead th {
+  border: none;
+  padding: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.admin-table tbody tr {
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.admin-table tbody tr:hover {
+  background: linear-gradient(90deg, rgba(39, 174, 96, 0.1) 0%, rgba(46, 204, 113, 0.1) 100%);
+  transform: scale(1.01);
+}
+
+.admin-table tbody td {
+  padding: 1rem;
+  border: none;
+  vertical-align: middle;
+}
+
+/* Badges personnalisés */
+.admin-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.admin-badge-success {
+  background: linear-gradient(45deg, #27ae60, #2ecc71);
+  color: white;
+}
+
+.admin-badge-danger {
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  color: white;
+}
+
+.admin-badge-primary {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white;
+}
+
+.admin-badge-secondary {
+  background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+  color: white;
+}
+
+/* Boutons personnalisés */
+.admin-btn {
+  border-radius: 15px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.3px;
+  transition: var(--admin-transition);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.admin-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.admin-btn:hover::before {
+  left: 100%;
+}
+
+.admin-btn-primary {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  color: white;
+  box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-btn-success {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  color: white;
+  box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-btn-danger {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+/* Alertes personnalisées */
+.admin-alert {
+  border-radius: var(--admin-border-radius);
+  border: none;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-alert::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: currentColor;
+}
+
+.admin-alert-danger {
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(192, 57, 43, 0.1));
+  color: var(--admin-accent);
+  border-left: 4px solid var(--admin-accent);
+}
+
+.admin-alert-info {
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
+  color: var(--admin-info);
+  border-left: 4px solid var(--admin-info);
+}
+
+/* Spinner personnalisé */
+.admin-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255,255,255,0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  animation: adminSpin 1s linear infinite;
+}
+
+@keyframes adminSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Loading container */
+.admin-loading {
+  background: var(--admin-gradient);
+  color: white;
+  border-radius: var(--admin-border-radius);
+  padding: 3rem;
+  text-align: center;
+  box-shadow: var(--admin-shadow);
+}
+
+/* Debug info */
+.admin-debug {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  border-radius: var(--admin-border-radius);
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.admin-debug h6 {
+  color: #ecf0f1;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.admin-debug p {
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-card-body {
+    padding: 1rem;
+  }
+  
+  .admin-table {
+    font-size: 0.9rem;
+  }
+  
+  .admin-btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.admin-fade-in {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Animation pour les cartes */
+@keyframes slideInCard {
+  from {
+    opacity: 0;
+    transform: translateY(30px) rotateX(10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+.admin-card {
+  animation: slideInCard 0.8s ease-out;
+}
+
+/* Animation staggered */
+.admin-card:nth-child(1) { animation-delay: 0.1s; }
+.admin-card:nth-child(2) { animation-delay: 0.2s; }
+.admin-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Effet de pulsation pour les statistiques */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.admin-stats-card:hover {
+  animation: pulse 0.6s ease-in-out;
+}
+
+/* Styles pour les statistiques */
+.admin-stats-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--admin-card-radius);
+  padding: 2rem;
+  transition: var(--admin-transition);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.admin-stats-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.admin-stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.admin-stats-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.admin-stats-label {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.admin-stats-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  opacity: 0.3;
+  color: white;
+}
+
+/* Bouton moderne avec border-radius - Style vert */
+.modern-admin-btn {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%) !important;
+  border: none !important;
+  border-radius: 25px !important;
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  padding: 0.8rem 2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.modern-admin-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.modern-admin-btn:hover::before {
+  left: 100%;
+}
+
+.modern-admin-btn:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 12px 35px rgba(39, 174, 96, 0.4) !important;
+  background: linear-gradient(135deg, #229954 0%, #27ae60 100%) !important;
+}
+
+.modern-admin-btn:active {
+  transform: translateY(0) scale(0.98) !important;
+}
+
+/* Styles spécifiques pour les cartes de statistiques */
+.stat-card {
+  border-radius: 15px !important;
+  padding: 15px !important;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3) !important;
+}
+
+/* Scrollbar personnalisée */
+.admin-table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.admin-table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.admin-table-container::-webkit-scrollbar-thumb {
+  background: var(--admin-gradient);
+  border-radius: 10px;
+}
+
+.admin-table-container::-webkit-scrollbar-thumb:hover {
+  background: var(--admin-secondary);
+}
+
+/* Avatar circle */
+.avatar-circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: var(--admin-gradient);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+/* Dropdown styles */
+.dropdown-menu {
+  z-index: 99999 !important;
+  position: fixed !important;
+  top: auto !important;
+  right: auto !important;
+  margin-top: 8px !important;
+  border: 1px solid rgba(39,174,96,0.1) !important;
+  background-color: white !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(39,174,96,0.13) !important;
+  min-width: 220px !important;
+  transform: none !important;
+}
+
+/* Force dropdown to be on top */
+.dropdown.show .dropdown-menu {
+  z-index: 99999 !important;
+  position: absolute !important;
+  display: block !important;
+  transform: none !important;
+}
+
+/* Ensure navbar has proper z-index */
+.admin-navbar {
+  z-index: 1000 !important;
+  position: relative !important;
+}
+
+/* Ensure dropdown container has proper positioning */
+.dropdown {
+  position: relative !important;
+  z-index: 1001 !important;
+}
+
+/* Global styles to ensure modals and dropdowns are on top */
+.modal {
+  z-index: 99999 !important;
+}
+
+.dropdown-menu {
+  z-index: 99999 !important;
+}
+
+/* Override any Bootstrap z-index issues */
+[data-bs-toggle="dropdown"] + .dropdown-menu {
+  z-index: 99999 !important;
+  position: absolute !important;
+  display: block !important;
+}
+
+/* Force all dropdowns to be on top */
+.dropdown.show .dropdown-menu {
+  z-index: 99999 !important;
+  position: absolute !important;
+  display: block !important;
+  transform: none !important;
+}
+
+/* Confirm Modal styles */
+.confirm-modal {
+  z-index: 99999 !important;
+}
+
+.confirm-modal .modal-content {
+  border-radius: 15px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+  border: none !important;
+}
+
+.confirm-modal .modal-header {
+  border-radius: 15px 15px 0 0 !important;
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.confirm-modal .modal-footer {
+  border-radius: 0 0 15px 15px !important;
+  border-top: 1px solid #dee2e6 !important;
+}
+
+.confirm-modal .btn {
+  border-radius: 8px !important;
+  padding: 8px 20px !important;
+  transition: all 0.3s ease !important;
+}
+
+.confirm-modal .btn:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(39,174,96,0.1) !important;
+  color: #27ae60 !important;
+}
+
+.dropdown-item:focus {
+  background-color: rgba(39,174,96,0.15) !important;
+  color: #27ae60 !important;
+}
+
+/* Boutons d'action */
+.btn-group .btn {
+  border-radius: 8px !important;
+  margin: 0 2px;
+  transition: all 0.3s ease;
+}
+
+.btn-group .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
