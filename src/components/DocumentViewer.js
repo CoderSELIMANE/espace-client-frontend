@@ -34,7 +34,7 @@ const DocumentViewer = ({ document, onClose }) => {
 
       // Créer une URL de visualisation avec token d'authentification
       const token = localStorage.getItem('access_token');
-      const previewUrl = `http://localhost:8000/api/documents/${document.id}/preview/?token=${token}`;
+      const previewUrl = `https://fortunate-delila-testmyappdeveloppement-50d9baf7.koyeb.app/api/documents/${document.id}/preview/?token=${token}`;
       
       setViewUrl(previewUrl);
       setLoading(false);
