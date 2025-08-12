@@ -51,7 +51,7 @@ const ModernDocumentCard = ({ document, onDelete, onUpdate, onView }) => {
     // Pour les documents de type "fiche" et "autre", ouvrir dans un nouvel onglet
     if (document.document_type === 'fiche' || document.document_type === 'other') {
       const token = localStorage.getItem('access_token');
-      const previewUrl = `http://localhost:8000/documents/${document.id}/preview/?token=${token}`;
+      const previewUrl = `https://fortunate-delila-testmyappdeveloppement-50d9baf7.koyeb.app/documents/${document.id}/preview/?token=${token}`;
 
       console.log('🔗 Ouverture dans nouvel onglet:', {
         type: document.document_type,
