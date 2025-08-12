@@ -1,7 +1,7 @@
 import axios from 'axios';
 import authService from './authService';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'https://fortunate-delila-testmyappdeveloppement-50d9baf7.koyeb.app/';
 
 class AdminService {
   constructor() {
